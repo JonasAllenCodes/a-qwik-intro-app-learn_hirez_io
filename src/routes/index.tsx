@@ -3,8 +3,15 @@ import { component$ } from '@builder.io/qwik';
 
 export default component$(() => {
   return (
-    <div>
-      Llamas Rule!..  Over Who?
-    </div>
+    <>
+      <Misko />
+      <span>
+        Hello World!
+      </span>
+    </>
   );
 });
+
+export const Misko = component$(() => {
+  return <div>Bla</div>;
+})
