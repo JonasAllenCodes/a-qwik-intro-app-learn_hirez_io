@@ -1,8 +1,5 @@
 import { component$, useSignal } from '@builder.io/qwik';
-
-export interface ProjectorProps {
-  value?: string,
-}
+import { Projector } from "./projector"; 
 
 export default component$(() => {
   const searchText = useSignal("");
@@ -26,7 +23,3 @@ export default component$(() => {
 
   </div>
 });
-
-export const Projector = component$<ProjectorProps>((props) => {
-  return <div>You typed: {props.value}</div>;
-})
