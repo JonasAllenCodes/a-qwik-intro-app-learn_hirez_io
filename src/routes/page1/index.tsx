@@ -9,7 +9,9 @@ export default component$(() => {
 
     <hr />
     
-    <input type="text" placeholder="Type your search"/>
+    <input type="text" placeholder="Type your search" onKeyPress$={(e) => {
+      console.log(e.key);
+    }}/>
     
     <hr />
     
