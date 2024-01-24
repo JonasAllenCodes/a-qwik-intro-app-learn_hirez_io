@@ -1,4 +1,4 @@
-import { component$, useSignal } from '@builder.io/qwik';
+import { component$, Slot, useSignal } from '@builder.io/qwik';
 
 
 export default component$(() => {
@@ -7,9 +7,9 @@ export default component$(() => {
     <>
       <button onClick$={() => {
         isJonasVisableSignal.value = !isJonasVisableSignal.value;
-      }}>Ahoj!</button>
+      }}>Hello,</button>
       { isJonasVisableSignal.value ?
-        <Jonas>I love Angela</Jonas>
+        <Jonas>I love Angela!</Jonas>
         : null
       }
     </>
@@ -17,8 +17,10 @@ export default component$(() => {
 });
 
 export const Jonas = component$(() => {
-  return <>
-  <div>Hello, my name is Jonas. Will you pour yourself some tea?</div>
+  return <div>
+  <div>my name is Jonas.</div>
+  <div>Will you pour yourself some tea?</div>
   <div>The workers are coming home!</div>
-  </>;
+  <Slot />
+  </div>;
 })
