@@ -2,24 +2,22 @@ import { component$, useSignal } from '@builder.io/qwik';
 import { Projector } from "./projector"; 
 
 export default component$(() => {
-  const searchText = useSignal("");
+  const messageSignal = useSignal("");
 
   return <div>
     This is Page 1
 
     <hr />
     
-    <input type="text" placeholder="Type your search" onInput$={(e) => {
-      searchText.value = (e.target as HTMLInputElement).value
-    }}/> 
+    <input type="text" placeholder="Type your search"
+      onInput$={(e) => {
+        messageSignal.value = (e.target as HTMLInputElement).value;
+      }}
+    />
     
     <hr />
     
-    {searchText.value ?? (
-      <>
-        <Projector value={searchText.value} />
-      </>
-    )}
+    <Projector message={messageSignal.value}>Your message is:</Projector>
 
   </div>
 });

@@ -1,9 +1,9 @@
-import { component$ } from "@builder.io/qwik";
+import { Slot, component$ } from "@builder.io/qwik";
 
 export interface ProjectorProps {
-    value?: string,
+    message?: string;
   }
   
-export const Projector = component$<ProjectorProps>((props) => {
-    return <div>You typed: {props.value}</div>;
+export const Projector = component$<ProjectorProps>((props: ProjectorProps) => {
+    return <div><Slot /> {props.message}</div>;
 })
